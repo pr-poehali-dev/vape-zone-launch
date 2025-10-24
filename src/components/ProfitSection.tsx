@@ -1,7 +1,14 @@
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
 const ProfitSection = () => {
+  const handleCalculation = () => {
+    const phoneNumber = '79999999999';
+    const message = 'Хочу получить расчет прибыли для своего магазина VAPE ZONE';
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
   return (
     <section className="py-20 px-6 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-orange-500/5 to-transparent pointer-events-none" />
@@ -9,9 +16,19 @@ const ProfitSection = () => {
         <h2 className="text-5xl font-bold text-center mb-8 text-white">
           Чистая <span className="text-orange-500">прибыль</span>
         </h2>
-        <p className="text-center text-gray-400 text-xl mb-12 max-w-3xl mx-auto">
+        <p className="text-center text-gray-400 text-xl mb-6 max-w-3xl mx-auto">
           Реальные показатели работающих магазинов VAPE ZONE
         </p>
+        <div className="flex justify-center mb-12">
+          <Button 
+            onClick={handleCalculation}
+            size="lg"
+            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-6 text-lg shadow-xl shadow-orange-500/30"
+          >
+            <Icon name="Calculator" size={24} className="mr-2" />
+            Получить расчет
+          </Button>
+        </div>
         
         <div className="max-w-6xl mx-auto mb-12">
           <Card className="p-8 bg-gradient-to-br from-zinc-900 to-zinc-950 border-orange-500/30 relative overflow-hidden">
